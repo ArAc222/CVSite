@@ -59,6 +59,25 @@
                 color: yellow;
             }
         }
+
+        /* Stilovi za veće slike */
+        .fullscreen-img {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .fullscreen-img img {
+            max-width: 90%;
+            max-height: 90%;
+        }
     </style>
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="70">
@@ -131,7 +150,7 @@
                     <li>Fakultet: <a href="https://www.ferit.unios.hr/" target="_blank">Fakultet elektrotehnike, računarstva i informacijskih tehnologija u Osijeku</a></li>
                 </ul>
             </div>
-            <img src="slike/education.jpg" alt="Education Image" style="position: absolute; top: 0; right: 20px; width: 200px; height: auto;">
+            <img src="slike/education.jpg" alt="Education Image" style="position: absolute; top: 0; right: 20px; width: 200px; height: auto;" onclick="openFullscreenImage(this.src)">
             <video controls style="width: 100%; margin-top: 50px;">
                 <source src="audio/tehnickaSkola.mp4" type="video/mp4">
                 Your browser does not support the video element.
@@ -178,14 +197,14 @@
                 </div>
             </div>
             <div class="card-img-overlay d-flex justify-content-end" style="position: absolute; top: 0; right: 0;">
-                <img src="slike/coding.gif" alt="Code GIF" style="width: 300px;">
+                <img src="slike/coding.gif" alt="Code GIF" style="width: 300px;" onclick="openFullscreenImage(this.src)">
             </div>
         </section>
         
         
 
         <section id="kontakt">
-            <h2 style="display: flex; align-items: center;">Kontakt <img src="slike/contact.bmp" alt="Contact Image" style="margin-left: 10px; width: 50px; height: auto;"></h2>
+            <h2 style="display: flex; align-items: center;">Kontakt <img src="slike/contact.bmp" alt="Contact Image" style="margin-left: 10px; width: 50px; height: auto;" onclick="openFullscreenImage(this.src)"></h2>
             <ul>
                 <li>Email: luka263284@gmail.com</li>
                 <li>Broj telefona: +385958126334</li>
@@ -198,7 +217,10 @@
             <p>Ovaj projekt je izrađen za vrijeme pohađanja <a href="https://www.ferit.unios.hr/" target="_blank">Elektrotehničkog fakulteta</a> u Osijeku, u sklopu kolegija <a href="https://moodle.srce.hr/2023-2024/course/view.php?id=163509" target="_blank">Multimedijska tehnika</a>.</p>
         </footer>
         
-                
+        <!-- Prikaz veće verzije slike -->
+        <div class="fullscreen-img" onclick="closeFullscreenImage()">
+            <img id="fullscreen-img" src="" alt="Fullscreen Image">
+        </div>
 
     </div>
 
@@ -207,8 +229,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+        // Funkcija za otvaranje veće verzije slike
+        function openFullscreenImage(src) {
+            var imgElement = document.getElementById('fullscreen-img');
+            imgElement.src = src;
+            var fullscreenImg = document.querySelector('.fullscreen-img');
+            fullscreenImg.style.display = 'flex';
+        }
+
+        // Funkcija za zatvaranje veće verzije slike
+        function closeFullscreenImage() {
+            var fullscreenImg = document.querySelector('.fullscreen-img');
+            fullscreenImg.style.display = 'none';
+        }
+
+        // Pomiče stranicu na odabrani dio kada se klikne na izbornik
         $(document).ready(function(){
-            // Pomiče stranicu na odabrani dio kada se klikne na izbornik
             $('a[href^="#"]').on('click', function(event) {
                 var target = document.querySelector(this.getAttribute('href'));
                 if( target ) {
