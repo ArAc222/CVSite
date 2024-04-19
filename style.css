@@ -1,0 +1,96 @@
+/* Resetiranje */
+html, body, header, main, footer, section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #acd8ff; /* Milka blue */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+section {
+    background-color: #ffffff; /* Bijela pozadina */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start; /* Poravnaj na početak kontejnera */
+    align-items: center;
+    gap: 3px; /* Manji razmak između slike i teksta */
+}
+
+
+/* Font */
+.info p {
+    font-family: Arial, sans-serif;
+    margin-right: 10px; /* Dodaj desni margin od 10 piksela */
+    flex: 1; /* Rastezanje teksta kako bi zauzeo dostupan prostor */
+}
+
+.profile-picture {
+    margin-right: 20px; /* Dodaj malo prostora s desne strane slike */
+    flex: 0 0 auto; /* Ne mijenjaj veličinu slike */
+}
+
+.profile-picture img {
+    width: 42%; /* Smanji širinu slike na 80% originalne veličine */
+    height: auto; /* Automatska visina */
+}
+
+.profile-picture img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+a {
+    color: navy;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.left-column, .right-column {
+    width: 45%; /* Prilagodite širinu stupaca prema potrebi */
+}
+
+#obrazovanje .content p {
+    width: 100%;
+}
+
+/* Stil za footer */
+footer {
+    text-align: center;
+}
+
+#o-meni {
+    text-align: left; /* Poravnaj tekst na lijevo */
+}
+
+#o-meni h2 {
+    margin-top: 10px; /* Dodaj gornji margin od 10px */
+}
+
+#o-meni .content {
+    align-items: flex-start; /* Poravnaj sadržaj na početak kontejnera */
+    gap: 10px; /* Veći razmak između slike i teksta */
+}

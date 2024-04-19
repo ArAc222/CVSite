@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Pozadina */
+        }
+
+        .jumbotron {
+            background-color: #4179b6; /* Pozadina jumbotrana */
+            color: white; /* Boja teksta */
+            padding: 50px 0; /* Prostor unutar jumbotrana */
+            text-align: center; /* Centriranje teksta */
+            margin-bottom: 0; /* Nema margine ispod jumbotrana */
+        }
+
+        .container {
+            margin-top: 20px; /* Prostor iznad sadržaja */
+        }
+
+        .student-img {
+            width: 250px; /* Veličina slike */
+            margin-bottom: 20px; /* Prostor ispod slike */
+        }
+
+        .student-link {
+            color: #4179b6; /* Boja linkova */
+            text-decoration: none; /* Bez podvlake */
+            display: block; /* Da se linkovi pojave kao blokovi */
+        }
+
+        .student-link:hover {
+            text-decoration: underline; /* Podvlaka na hover */
+        }
+
+        .project-links {
+            position: fixed; /* Fiksiraj linkove */
+            bottom: 20px; /* Odmak od dna */
+            right: 20px; /* Odmak od desnog ruba */
+            text-align: right; /* Poravnavanje teksta u desno */
+            z-index: 999; /* Postavi iznad ostalog sadržaja */
+        }
+
+        .project-links a {
+            display: block; /* Blok elementi */
+            margin-bottom: 10px; /* Prostor između linkova */
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .student-col {
+            margin-top: 50px;
+        }
+
+        .student-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column; /* Postavljanje vertikalnog položaja */
+            align-items: center; /* Centriranje sadržaja */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h1 class="display-4">Dobrodošli na Student Finder</h1>
+        <p class="lead">Ovdje možete pronaći informacije o studentima i njihovim vještinama</p>
+    </div>
+
+    <!-- Glavni sadržaj -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 student-col">
+                <div class="student-container">
+                    <img src="slike/ProfilnaAracic.png" alt="Luka Aračić" class="student-img">
+                    <h2 class="centered">Luka Aračić</h2>
+                    <a href="luka_aracic.html" target="_blank" class="student-link centered">Pogledajte više</a>
+                </div>
+            </div>
+            <div class="col-md-6 student-col">
+                <div class="student-container">
+                    <img src="slike/ProfilnaBerger.jpg" alt="David Berger" class="student-img" data-toggle="modal" data-target="#imageModal">
+                    <h2 class="centered">David Berger</h2>
+                    <a href="david_berger.html" target="_blank" class="student-link centered">Pogledajte više</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Linkovi za projekte kolega -->
+    <div class="project-links">
+        <h4 class="other-students-heading">Ostali studenti:</h4>
+        <a href="projekt1.html" target="_blank">Ivan Berlančić</a>
+        <a href="projekt2.html" target="_blank">Dragan Brajković</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

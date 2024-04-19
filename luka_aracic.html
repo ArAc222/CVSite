@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luka Aračić - CV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Dodatni stilovi */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Pozadina */
+            padding-top: 70px; /* Prostor iznad sadržaja zbog fiksnog navbara */
+        }
+
+        .navbar {
+            background-color: #4179b6; /* Boja navbara */
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: #ffffff; /* Boja teksta u navbaru */
+        }
+
+        .container {
+            margin-top: 20px; /* Prostor iznad sadržaja */
+        }
+
+        section {
+            background-color: #ffffff; /* Boja pozadine sekcija */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s ease; /* Prijelaz na hover efekt */
+        }
+
+        section:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Efekt na hover */
+        }
+
+        h2 {
+            margin-bottom: 20px; /* Prostor ispod naslova sekcija */
+        }
+
+        .nav-link {
+            cursor: pointer; /* Promjena kursora na linkovima izbornika */
+        }
+
+        .active-section {
+            background-color: #cce5ff; /* Boja aktivne sekcije */
+        }
+
+        .blinking-text {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                color: yellow;
+            }
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="70">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="navbar">
+        <a class="navbar-brand" href="#">Luka Aračić - CV</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#o-meni">O meni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#obrazovanje">Obrazovanje</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#iskustvo">Profesionalno iskustvo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#vjestine">Vještine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#kontakt">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Glavni sadržaj -->
+    <div class="container">
+
+        <section id="o-meni">
+            <h2>O meni</h2>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="profile-picture">
+                            <a href="slike/ProfilnaAracic.png" target="_blank">
+                                <img src="slike/ProfilnaAracic.png" alt="Profile Picture">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="info">
+                            <p>Datum rođenja: 15.09.2002.</p>
+                            <p>Mjesto rođenja: <a href="https://www.pozega.hr/" target="_blank">Požega</a></p>
+                            <p>Mjesto stanovanja: <a href="https://www.osijek.hr/" target="_blank">Osijek</a></p>
+                            <p>Spol: Muški</p>
+                            <p>Hobi: Nogomet</p>
+                            <p><audio controls style="width: 100%; margin-top: 20px;">
+                                <source src="audio/AracicLuka.mp3" type="audio/mpeg">
+                                Your browser does not support the audio element.
+                            </audio></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="obrazovanje" style="position: relative;">
+            <h2>Obrazovanje</h2>
+            <div class="content">
+                <ul>
+                    <li>Osnovna škola: <a href="http://os-frakajeadzica-pleternica.skole.hr/" target="_blank">Osnovna škola Fra Kaje Adžića Pleternica</a></li>
+                    <li>Srednja škola: <a href="https://www.tehnickaskola.net/" target="_blank">Tehnička škola Požega</a></li>
+                    <li>Fakultet: <a href="https://www.ferit.unios.hr/" target="_blank">Fakultet elektrotehnike, računarstva i informacijskih tehnologija u Osijeku</a></li>
+                </ul>
+            </div>
+            <img src="slike/education.jpg" alt="Education Image" style="position: absolute; top: 0; right: 20px; width: 200px; height: auto;">
+            <video controls style="width: 100%; margin-top: 50px;">
+                <source src="audio/tehnickaSkola.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </section>
+        
+
+        <section id="iskustvo">
+            <h2>Profesionalno iskustvo</h2>
+            <div class="content">
+                <p>Praksa u <a href="https://mono.software/" target="_blank">Mono Software d.o.o.</a></p>
+            </div>
+        </section>
+
+        <section id="vjestine" style="position: relative;">
+            <h2>Vještine</h2>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Programski jezici:</strong></p>
+                        <ul>
+                            <li>Java</li>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>Python</li>
+                            <li>Kotlin</li>
+                            <li>Angular</li>
+                            <li>React</li>
+                            <li>JavaScript</li>
+                            <li>HTML</li>
+                            <li>PHP</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>SQL:</strong></p>
+                        <ul>
+                            <li>Postgresql</li>
+                            <li>PgAdmin</li>
+                            <li>DBeaver</li>
+                            <li>MyPhpAdmin</li>
+                            <li>CloudStorage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-img-overlay d-flex justify-content-end" style="position: absolute; top: 0; right: 0;">
+                <img src="slike/coding.gif" alt="Code GIF" style="width: 300px;">
+            </div>
+        </section>
+        
+        
+
+        <section id="kontakt">
+            <h2 style="display: flex; align-items: center;">Kontakt <img src="slike/contact.bmp" alt="Contact Image" style="margin-left: 10px; width: 50px; height: auto;"></h2>
+            <ul>
+                <li>Email: luka263284@gmail.com</li>
+                <li>Broj telefona: +385958126334</li>
+                <li>Facebook: <a href="https://www.facebook.com/profile.php?id=100095254233453&locale=hr_HR" target="_blank">Luka Aračić</a></li>
+                <li>LinkedIN: <a href="https://www.linkedin.com/in/luks1-aracic-33999b259/" target="_blank">Luksi Aracic</a></li>
+            </ul>
+        </section>
+                
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // Pomiče stranicu na odabrani dio kada se klikne na izbornik
+            $('a[href^="#"]').on('click', function(event) {
+                var target = document.querySelector(this.getAttribute('href'));
+                if( target ) {
+                    event.preventDefault();
+                    var targetTop = target.getBoundingClientRect().top + window.scrollY - 100; // Dodajemo offset za skrolanje
+                    window.scrollTo({
+                        top: targetTop,
+                        behavior: 'smooth'
+                    });
+        
+                    // Zasvjetljuje naslov odabrane sekcije
+                    var sections = document.querySelectorAll('section');
+                    sections.forEach(function(section) {
+                        section.classList.remove('blinking-text');
+                    });
+                    target.classList.add('blinking-text');
+                    setTimeout(function(){
+                        target.classList.remove('blinking-text');
+                    }, 2000); // Promijenjeno na 2 sekunde
+                }
+            });
+        });        
+        
+    </script>
+</body>
+</html>
