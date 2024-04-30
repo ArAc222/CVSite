@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luka Aračić - CV</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
     <style>
         /* Dodatni stilovi */
         body {
@@ -61,22 +62,11 @@
         }
 
         /* Stilovi za veće slike */
-        .fullscreen-img {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .fullscreen-img img {
-            max-width: 90%;
-            max-height: 90%;
+        .fancybox-slide--iframe .fancybox-content {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 80vw !important;
+            max-height: 80vh !important;
         }
     </style>
 </head>
@@ -118,8 +108,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="profile-picture">
-                            <a href="slike/ProfilnaAracic.png" target="_blank">
-                                <img src="slike/ProfilnaAracic.png" alt="Profile Picture">
+                            <a data-fancybox="gallery" href="slike/ProfilnaAracic.png">
+                                <img src="slike/ProfilnaAracic.png" class="img-fluid" alt="Profile Picture" style="width: 200px; height: auto;">
                             </a>
                         </div>
                     </div>
@@ -150,7 +140,9 @@
                     <li>Fakultet: <a href="https://www.ferit.unios.hr/" target="_blank">Fakultet elektrotehnike, računarstva i informacijskih tehnologija u Osijeku</a></li>
                 </ul>
             </div>
-            <img src="slike/education.jpg" alt="Education Image" style="position: absolute; top: 0; right: 20px; width: 200px; height: auto;" onclick="openFullscreenImage(this.src)">
+            <a data-fancybox="gallery" href="slike/education.jpg">
+                <img src="slike/education.jpg" alt="Education Image" class="img-fluid" style="position: absolute; top: 0; right: 20px; width: 200px; height: auto;">
+            </a>
             <video controls style="width: 100%; margin-top: 50px;">
                 <source src="audio/tehnickaSkola.mp4" type="video/mp4">
                 Your browser does not support the video element.
@@ -169,7 +161,7 @@
             <h2>Vještine</h2>
             <div class="content">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <p><strong>Programski jezici:</strong></p>
                         <ul>
                             <li>Java</li>
@@ -184,7 +176,13 @@
                             <li>PHP</li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
+                        <!-- Slika 1 -->
+                        <a data-fancybox="gallery" href="slike/java.jpg">
+                            <img src="slike/java.jpg" alt="Java Image" class="img-fluid" style="max-width: 100%; max-height: 55%;">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
                         <p><strong>SQL:</strong></p>
                         <ul>
                             <li>Postgresql</li>
@@ -194,17 +192,19 @@
                             <li>CloudStorage</li>
                         </ul>
                     </div>
+                    <div class="col-md-3">
+                        <!-- Slika 2 -->
+                        <a data-fancybox="gallery" href="slike/coding.gif">
+                            <img src="slike/coding.gif" alt="Code GIF" class="img-fluid" style="max-width: 100%; max-height: 50%;">
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="card-img-overlay d-flex justify-content-end" style="position: absolute; top: 0; right: 0;">
-                <img src="slike/coding.gif" alt="Code GIF" style="width: 300px;" onclick="openFullscreenImage(this.src)">
             </div>
         </section>
         
-        
 
         <section id="kontakt">
-            <h2 style="display: flex; align-items: center;">Kontakt <img src="slike/contact.bmp" alt="Contact Image" style="margin-left: 10px; width: 50px; height: auto;" onclick="openFullscreenImage(this.src)"></h2>
+            <h2 style="display: flex; align-items: center;">Kontakt <a data-fancybox="gallery" href="slike/contact.bmp"><img src="slike/contact.bmp" alt="Contact Image" style="margin-left: 10px; width: 50px; height: auto;"></a></h2>
             <ul>
                 <li>Email: luka263284@gmail.com</li>
                 <li>Broj telefona: +385958126334</li>
@@ -216,58 +216,12 @@
         <footer style="background-color: #f8f9fa; padding: 20px; text-align: center;">
             <p>Ovaj projekt je izrađen za vrijeme pohađanja <a href="https://www.ferit.unios.hr/" target="_blank">Elektrotehničkog fakulteta</a> u Osijeku, u sklopu kolegija <a href="https://moodle.srce.hr/2023-2024/course/view.php?id=163509" target="_blank">Multimedijska tehnika</a>.</p>
         </footer>
-        
-        <!-- Prikaz veće verzije slike -->
-        <div class="fullscreen-img" onclick="closeFullscreenImage()">
-            <img id="fullscreen-img" src="" alt="Fullscreen Image">
-        </div>
 
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        // Funkcija za otvaranje veće verzije slike
-        function openFullscreenImage(src) {
-            var imgElement = document.getElementById('fullscreen-img');
-            imgElement.src = src;
-            var fullscreenImg = document.querySelector('.fullscreen-img');
-            fullscreenImg.style.display = 'flex';
-        }
-
-        // Funkcija za zatvaranje veće verzije slike
-        function closeFullscreenImage() {
-            var fullscreenImg = document.querySelector('.fullscreen-img');
-            fullscreenImg.style.display = 'none';
-        }
-
-        // Pomiče stranicu na odabrani dio kada se klikne na izbornik
-        $(document).ready(function(){
-            $('a[href^="#"]').on('click', function(event) {
-                var target = document.querySelector(this.getAttribute('href'));
-                if( target ) {
-                    event.preventDefault();
-                    var targetTop = target.getBoundingClientRect().top + window.scrollY - 100; // Dodajemo offset za skrolanje
-                    window.scrollTo({
-                        top: targetTop,
-                        behavior: 'smooth'
-                    });
-        
-                    // Zasvjetljuje naslov odabrane sekcije
-                    var sections = document.querySelectorAll('section');
-                    sections.forEach(function(section) {
-                        section.classList.remove('blinking-text');
-                    });
-                    target.classList.add('blinking-text');
-                    setTimeout(function(){
-                        target.classList.remove('blinking-text');
-                    }, 2000); // Promijenjeno na 2 sekunde
-                }
-            });
-        });        
-        
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </body>
 </html>

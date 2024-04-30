@@ -94,3 +94,10 @@ footer {
     align-items: flex-start; /* Poravnaj sadržaj na početak kontejnera */
     gap: 10px; /* Veći razmak između slike i teksta */
 }
+
+.fancybox-slide--iframe .fancybox-content {
+    width: 200% !important;
+    height: 200% !important;
+    max-width: 80vw !important;
+    max-height: 80vh !important;
+}
